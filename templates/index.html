@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>MOOC SEARCH PROJECT</title>
+
+  <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">  
+  <link href="https://fonts.lug.ustc.edu.cn/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.lug.ustc.edu.cn/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.lug.ustc.edu.cn/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.lug.ustc.edu.cn/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <link href="{{ url_for('static',filename='css/agency.css') }}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#functions">Functions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#roadmap">Roadmap</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-heading text-uppercase">MOOC Search Project</div>
+        <a class="btn btn-primary btn-xl mr-5 js-scroll-trigger" href="#functions">Learn More</a>
+        <a class="btn btn-primary btn-xl ml-5 " href="{{ url_for('doc') }}">Documentation</a>
+      </div>
+    </div>
+  </header>
+
+
+  <section id="functions">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">FUNCTIONS</h2>
+          <h3 class="section-subheading text-muted">The main functions of our project</h3>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-search fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Mooc Search</h4>
+          <p class="text-muted">Our tool make it easy to search the mooc from several websites.You can find the mooc you need using our tool.</p>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Resource Download</h4>
+          <p class="text-muted">It is difficult for us to download necessary materials from MOOC, especially videos.Our tool enables you to easily
+            download all kinds of MOOC materials.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-light" id="team">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+          <h3 class="section-subheading text-muted">We work together. </h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="team-member">
+            <div href="#portfolioModal1" style="cursor: pointer" data-toggle="modal">
+              <img class="mx-auto rounded-circle" src="{{ url_for('static',filename='img/team/1.jpg') }}" alt="">
+              <h4>Li Jiaxiang</h4>
+              <p class="text-muted">Lead Designer</p>
+            </div>
+
+
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=454873432">
+                  <i class="fa fa-qq"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a data-toggle="popover" tabindex="0" data-trigger="focus" data-content='<img src="{{ url_for('static',filename='img/team/weixin-1.jpg') }}" style="height:100%;width:100%">'
+                  data-html="true" data-template='<div class="popover" role="tooltip"><div class="arrow"></div><div class="popover-body"></div></div>'>
+                  <i class="fa fa-weixin"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/lijiaxiang98">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="team-member">
+            <div href="#portfolioModal2" style="cursor: pointer" data-toggle="modal">
+              <img class="mx-auto rounded-circle" src="{{ url_for('static',filename='img/team/2.jpg') }}" alt="">
+              <h4>Li Liangyong</h4>
+              <p class="text-muted">Lead Designer</p>
+            </div>
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1356643733">
+                  <i class="fa fa-qq"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a data-toggle="popover" tabindex="0" data-trigger="focus" data-content='<img src="{{ url_for('static',filename='img/team/weixin-2.jpg') }}" style="height:100%;width:100%">'
+                  data-html="true" data-template='<div class="popover" role="tooltip"><div class="arrow"></div><div class="popover-body"></div></div>'>
+                  <i class="fa fa-weixin"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/llyljs">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="team-member">
+            <div href="#portfolioModal3" style="cursor: pointer" data-toggle="modal">
+              <img class="mx-auto rounded-circle" src="{{ url_for('static',filename='img/team/3.jpg') }}" alt="">
+              <h4>Zhang Pinhan</h4>
+              <p class="text-muted">Lead Designer</p>
+            </div>
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=707153375">
+                  <i class="fa fa-qq"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a data-toggle="popover" tabindex="0" data-trigger="focus" data-content='<img src="{{ url_for('static',filename='img/team/weixin-3.jpg') }}" style="height:100%;width:100%">'
+                  data-html="true" data-template='<div class="popover" role="tooltip"><div class="arrow"></div><div class="popover-body"></div></div>'>
+                  <i class="fa fa-weixin"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/z666pr">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="large text-muted">And We are going to make mooc great again!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About -->
+  <section id="roadmap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Road map</h2>
+          <h3 class="section-subheading text-muted">Our plan to built this amazing application</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="timeline">
+            <li>
+              <div class="timeline-image">
+                <img class="rounded-circle img-fluid" src="{{ url_for('static',filename='img/roadmap/1.jpg') }}" alt="">
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>March 2018</h4>
+                  <h4 class="subheading">We got the idea!</h4>
+                </div>
+                <div class="timeline-body">
+                  <p class="text-muted">When learning on the Internet, we often get frustrated if we want to download the learning materials. And
+                    it's annoying when we find a lecture interesting but has closed by the teacher. The Mooc websites just
+                    has so many restrictions that make us unhappy. So this is how we got the idea. We are going to make MOOC
+                    great again!</p>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted">
+              <div class="timeline-image">
+                <img class="rounded-circle img-fluid" src="{{ url_for('static',filename='img/roadmap/2.jpg') }}" alt="">
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>April 2018</h4>
+                  <h4 class="subheading">We built a Website</h4>
+                </div>
+                <div class="timeline-body">
+                  <p class="text-muted">To make people better understand our work, we built this website as well as some unfinished functions for
+                    further development.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="timeline-image">
+                <img class="rounded-circle img-fluid" src="{{ url_for('static',filename='img/roadmap/3.jpg') }}" alt="">
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>May 2018</h4>
+                  <h4 class="subheading">Get our App runing</h4>
+                </div>
+                <div class="timeline-body">
+                  <p class="text-muted">We plan to deploy our app to 'pythonanywhere', so you can use our app online. But we will also provide
+                    commandline tool for you to download for better experice.</p>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted">
+              <div class="timeline-image">
+                <img class="rounded-circle img-fluid" src="{{ url_for('static',filename='img/roadmap/4.jpg') }}" alt="">
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>June 2018</h4>
+                  <h4 class="subheading">Optimize our App</h4>
+                </div>
+                <div class="timeline-body">
+                  <p class="text-muted">At that time, we decided to optimize our app including accelerating speed, bug fixing, as well as adding
+                    some new features.</p>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted">
+              <div class="timeline-image">
+                <h4>Be Part
+                  <br>Of Our
+                  <br>Story!</h4>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="intro-text">
+        <a class="btn btn-outline-primary btn-xl text-uppercase" href="{{url_for('search')}}">Try it now!</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <div class="modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel1">Detail</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 mx-auto">
+                <div class="modal-body">
+
+                  <h2 class="text-uppercase">Li Jiaxiang</h2>
+                  <p class="item-intro text-muted">李家祥</p>
+                  <img class="img-fluid d-block mx-auto" src="{{ url_for('static',filename='img/team/1.jpg') }}" alt="">
+                  <p></p>
+                  <p>极其讨厌读书。</p>
+                  <p>总是想宅在家里。</p>
+                  <p>除了玩电脑没别的爱好。。。</p>
+                  <ul>
+                    <li>Birthday: March 20th, 1998</li>
+                    <li>Major: Clinical Medicine</li>
+                    <li>School: Zhejiang University</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel2">Detail</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 mx-auto">
+                <div class="modal-body">
+
+                  <h2 class="text-uppercase">Li Liangyong</h2>
+                  <p class="item-intro text-muted">李良永</p>
+                  <img class="img-fluid d-block mx-auto" src="{{ url_for('static',filename='img/team/2.jpg') }}" alt="">
+                  <p></p>
+                  <p>被ddl追赶的渣渣</p>
+                  <p>喜欢吃的吃货</p>
+                  <p>不会场波的菜鸡</p>
+                  <ul>
+                    <li>Birthday: August 28th, 1997</li>
+                    <li>Major: ISEE</li>
+                    <li>School: Zhejiang University</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel3">Detail</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 mx-auto">
+                <div class="modal-body">
+
+                  <h2 class="text-uppercase">Zhang Pinhan</h2>
+                  <p class="item-intro text-muted">张品涵</p>
+                  <img class="img-fluid d-block mx-auto" src="{{ url_for('static',filename='img/team/2.jpg') }}" alt="">
+                  <p></p>
+                  <p>我爱学习！</p>
+                  <p>我只爱学习！！</p>
+                  <p>我的心里只有学习！！！</p>
+                  <ul>
+                    <li>Birthday: February 11th, 1999</li>
+                    <li>Major: Computer Science</li>
+                    <li>School: Zhejiang University</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.bundle.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="https://cdn.bootcss.com/jquery-easing/1.4.1/jquery.easing.min.js"></script>  <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
+  <!-- Custom scripts for this template -->
+  <script src="{{  url_for('static',filename='js/agency.js')  }}"></script>
+  <script>
+
+    $(function () {
+      $('[data-toggle="popover"]').popover();
+      $('.popover-dismiss').popover({
+        trigger: 'focus'
+      })
+    })
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<html class="fullscreen-bg" lang="zh">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>
+        MOOC SEARCH
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://fonts.lug.ustc.edu.cn/css?family=Dosis|Gamja+Flower|Handlee" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/search_main_style.css') }}" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+    <style type="text/css">
+
+    </style>
+    <div class="vertical-align-wrap">
+        <div class="vertical-align-middle">
+            <div class="search-box lockscreen">
+                <div class="content">
+                    <div class="header">
+                        <h1 class="text-center">{{  error  }}</h1>
+                    </div>
+                    <div class="text-center">
+                        <a href="{{  url_for('index')  }}" class="btn btn-outline-primary btn-lg">Take me back home!</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.bundle.js"></script>
+
+</html>

@@ -1,0 +1,202 @@
+<html class="fullscreen-bg" lang="zh">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>
+        MOOC SEARCH
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/callout.css') }}" rel="stylesheet">
+    <link href="https://fonts.lug.ustc.edu.cn/css?family=Dosis|Gamja+Flower|Handlee" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/search_main_style.css') }} " rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/result_style.css') }}" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+    <style type="text/css">
+        .top {
+            margin-top: -20px;
+            margin-left: -20px;
+            margin-right: -20px;
+            background-color: #e3f2fd;
+            /* height: 38px;
+            margin-bottom: 10px; */
+            margin-bottom: 1em;
+
+        }
+        form {
+            display: inline-block;
+            width: 30%;
+            margin-bottom: 0px!important;
+            transition: width 0.1s;
+            -webkit-transition: width 0.1s;
+            transition-timing-function: ease-in-out;
+            -webkit-transition-timing-function: ease-in-out;
+        }
+        #home {
+            padding-top: 0.55em;
+            height: 38px;
+
+        }
+        .bd-callout .border {
+            border-right-width: 2px;
+            border-right-style: solid;
+            border-right-color: #EDEDED;
+        }
+
+        .bd-callout {
+            -moz-box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 2px 10px 0 rgba(83, 116, 138, 0.21);
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        .source-block {
+            font-weight: 400;
+            display: block;
+            font-size: 10px;
+        }
+
+        .source {
+            font-style: italic;
+            font-weight: 100;
+            font-size: 15px;
+            color: gray;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .overflow {
+            height: 400px;
+            overflow-y: scroll;
+        }
+        form:hover {
+            width: 100%;
+        }
+        form:hover + #home {
+            display: none;
+        }
+
+    </style>
+    <div class="vertical-align-wrap">
+        <div class="vertical-align-middle">
+            <div class="search-box lockscreen">
+                <div class="content">
+                    <div class="top">
+                        <form method="GET" action="/search" id="form">
+                            <div class="input-group">
+                                <input class="form-control" type="search" placeholder="输入课程链接地址或课程关键字" name="query">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-primary" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <a href="{{ url_for('search') }}" class="btn btn-outline-primary float-right" id="home"><i class="fa fa-home"></i></a>
+                    </div>
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="icourse163-tab" data-toggle="tab" href="#icourse163" role="tab" aria-controls="home" aria-selected="true">中国大学Mooc</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="icourses-tab" data-toggle="tab" href="#icourses" role="tab" aria-controls="profile" aria-selected="false">爱课程</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="xuetangx-tab" data-toggle="tab" href="#xuetangx" role="tab" aria-controls="messages" aria-selected="false">学堂在线</a>
+                        </li>
+
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+
+                        <div class="tab-pane fade show active" id="icourse163" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="overflow">
+                                {% for course in icourse163_List %}
+                                <div class="bd-callout bd-callout-success d-flex p-2">
+                                    <img class="align-self-center" src="{{  url_for('static',filename='img/logos/icourse163.png')  }}" width="50px" height="50px">
+                                    <div class="border ml-2 mr-2"></div>
+                                    <div class="d-flex flex-column pl-2">
+                                        <a href="{{  url_for('get',url=course['Link'])  }}">
+                                            <h4>{{  course['Title']  }}</h4>
+                                        </a>
+                                        <div class="source-block">via
+                                            <a href="https://www.icourse163.org/">
+                                                <span class="source pl-2">icourse163</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="icourses" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="overflow">
+                                {% for course in icourses_List %}
+                                <div class="bd-callout bd-callout-primary d-flex p-2">
+                                    <img class="align-self-center" src="{{  url_for('static',filename='img/logos/icourses.png')  }}" width="50px" height="50px">
+                                    <div class="border ml-2 mr-2"></div>
+                                    <div class="d-flex flex-column pl-2">
+                                        <a href="{{  course['Link']  }}">
+                                            <h4>{{  course['Title']  }}</h4>
+                                        </a>
+                                        <div class="source-block">via
+                                            <a href="http://www.icourses.cn">
+                                                <span class="source pl-2">icourses</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="xuetangx" role="tabpanel" aria-labelledby="messages-tab">
+
+                            <div class="overflow">
+                                {% for course in xuetangx_List %}
+                                <div class="bd-callout bd-callout-danger d-flex p-2">
+                                    <img class="align-self-center" src="{{  url_for('static',filename='img/logos/xuetangx.jpg')  }}" width="50px" height="50px">
+                                    <div class="border ml-2 mr-2"></div>
+                                    <div class="d-flex flex-column pl-2">
+                                        <a href="{{  course.Link  }}">
+                                            <h4>{{  course.Title  }}</h4>
+                                        </a>
+                                        <div class="source-block">via
+                                            <a href="http://www.xuetangx.com/">
+                                                <span class="source pl-2">xuetangx</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.bundle.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<html class="fullscreen-bg" lang="zh">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>
+        MOOC SEARCH
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://fonts.lug.ustc.edu.cn/css?family=Dosis|Gamja+Flower|Handlee" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">    
+    <link href="{{ url_for('static',filename='css/search_main_style.css') }}" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+    <style type="text/css">
+        input {
+            font-size: 15px!important;
+            padding-top: 10px!important;
+            padding-bottom: 10px!important;
+            border: 1px solid rgba(33, 129, 247, 0.50)!important
+        }
+    </style>
+    <div class="vertical-align-wrap">
+        <div class="vertical-align-middle">
+            <div class="search-box lockscreen">
+                <div class="content">
+                    <div class="header">
+                        <h1 class="text-center">Mooc Search</h1>
+                    </div>
+
+                    <form method="GET" action="/search" id="searchform">
+                        <input class="form-control" id="coursesid" name="query" placeholder="输入课程链接地址或课程关键字" type="text">
+                        <a>&nbsp;
+                            <br />
+                        </a>
+                        <div align="center">
+                            <button class="btn btn-outline-primary" type="submit">Search
+                                <i class="fa fa-search ml-2"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.bundle.js"></script>
+
+</html>

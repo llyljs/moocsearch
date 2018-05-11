@@ -1,0 +1,28 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg-yellow {
+    background-color: bisque;
+}
+.bg-red {
+    background-color: red;
+}
+.bg-green {
+    background-color: greenyellow;
+}
+.center-box {
+    width: 400px;
+    height: 400px;
+}
+.main {
+    width: 100%;
+    margin-left: 150px;
+    margin-right: 150px;
+    
+}
