@@ -27,6 +27,8 @@ def search(keywords:str):
                 School = map(lambda x:x.find('div',class_='fl name').ul.li.get_text(strip=True),course_block)
                 for i,j,k in zip(Title,Link,School):
                     xuetangx_List.append({'Title':i,'Link':'http://www.xuetangx.com'+j,'School':k})
+                #for speed reason, just get 1 page
+                break
             except:
                 pass
         if current_page<page_count:
