@@ -58,12 +58,8 @@ class icourse163_getter:
                                 List_lesson.append({'file_name': lesson_title, 'file_url': url,
                                                     'file_type': 'pdf' if content_type == '3' else 'mp4'})
                         List_section.append({'section_title': section_title, 'files': List_lesson})
-                    else:
-                        pass
                 if List_section:
                     List_chapter.append({'chapter_title': chapter_title, 'chapter_content': List_section})
-            else:
-                pass
         return List_chapter
 
 if __name__ == '__main__':

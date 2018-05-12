@@ -166,6 +166,8 @@
                                          aria-labelledby="heading{{  loop.index  }}" data-parent="#accordionEx">
                                         <div class="card-body">
                                             <ul>
+
+                                                <!-- icourse163 list -->
                                                 {% if chapter.get('chapter_content') %}
 
                                                 {% for section in chapter['chapter_content'] %}
@@ -189,7 +191,8 @@
                                                     </ul>
                                                 </li>
                                                 {% endfor %}
-                                                {% else %}
+                                                <!-- icourses list -->
+                                                {% elif chapter.get('files') %}
                                                 {% for file in chapter['files'] %}
                                                     <li>
                                                         <a href="{{  file['file_url']  }}" rel="noreferrer">
@@ -202,6 +205,9 @@
                                                         </a>
                                                     </li>
                                                 {% endfor %}
+                                                {% else %}
+
+                                                    <!--xuetangx here -->
                                                 {% endif %}
                                             </ul>
                                         </div>

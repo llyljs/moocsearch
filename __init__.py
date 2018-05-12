@@ -40,6 +40,7 @@ def create_app():
     def get():
         #http://www.icourses.cn/sCourse/course_3623.html
         #https://www.icourse163.org/course/BIT-268001
+        #http://www.xuetangx.com/courses/course-v1:TsinghuaX+30240184+sp/about
         url = request.args.get('url',type=str)
         if url:
             if 'icourses' in url:
@@ -48,6 +49,11 @@ def create_app():
             elif 'icourse163' in url:
                 id = url.split('/')[-1]
                 return redirect(url_for('resource',website='icourse163',id=id,_external=True))
+            elif 'xuetangx' in url:
+                id = url.split('/')[-2]
+                return redirect(url_for('resource',website='xuetangx',id=id,_external=True))
+            else:
+                abort(404)
         else:
             abort(404)
         return 'hello'
@@ -57,12 +63,18 @@ def create_app():
             from . import icourse163_getter
             getter = icourse163_getter.icourse163_getter(id)
             chapter_list = getter.get_chapters()
+            if not chapter_list:
+                abort(501)
         elif website == 'icourses':
             from . import icourses_getter
             getter = icourses_getter.icourses_getter(id)
             chapter_list = getter.get_chapter()
             if not chapter_list:
                 abort(501)
+        elif website == 'xuetangx':
+            from . import xuetangx_getter
+            chapter_list = xuetangx_getter.get_xuetangx(id)
+
         return render_template('resource_list.html',chapter_list=chapter_list)
         
     @app.errorhandler(500)
