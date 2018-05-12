@@ -156,7 +156,7 @@
                                             <h4>{{  course['Title']  }}</h4>
                                         </a>
                                         <div class="source-block">via
-                                            <a href="http://www.icourses.cn">
+                                            <a href="{{  url_for('get',url=course['Link'])  }}">
                                                 <span class="source pl-2">icourses</span>
                                             </a>
                                         </div>
@@ -178,7 +178,7 @@
                                             <h4>{{  course.Title  }}</h4>
                                         </a>
                                         <div class="source-block">via
-                                            <a href="http://www.xuetangx.com/">
+                                            <a href="{{  url_for('get',url=course['Link'])  }}">
                                                 <span class="source pl-2">xuetangx</span>
                                             </a>
                                         </div>
