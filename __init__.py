@@ -38,13 +38,13 @@ def create_app():
 
     @app.route('/get')
     def get():
-        #http://www.icourses.cn/sCourse/course_3623.html
+        #http://www.icourses.cn/web/sword/portal/shareIntroduction?courseId=7331
         #https://www.icourse163.org/course/BIT-268001
         #http://www.xuetangx.com/courses/course-v1:TsinghuaX+30240184+sp/about
         url = request.args.get('url',type=str)
         if url:
             if 'icourses' in url:
-                id = url.split('_')[-1].split('.')[0]
+                id = url.split('=')[-1]
                 return redirect(url_for('resource',website='icourses',id=id,_external=True))
             elif 'icourse163' in url:
                 id = url.split('/')[-1]
